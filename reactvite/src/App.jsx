@@ -4,17 +4,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import ICard from './component/ICard'
+import Gallery from './component/Gallery'
 function App() {
- 
-  let a=10
-  let name="aarkesh"
-  let roll="2400320100007"
-  let branch="CSE"
-  let college="ABES"
   return (
     <div>
-      Hello 
-      <ICard></ICard>
+        {/* <ICard></ICard> */}
+        <Gallery></Gallery>
     </div>
   )
 }
