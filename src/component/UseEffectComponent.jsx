@@ -11,15 +11,17 @@ function UseEffect () {
        // denpendency array,
       async function fetchData(){
         try {
-            const data=await fetch('https://fakestoreapi.com/products')
+            const data=await fetch('https://dummyjson.com/products')
             const jsonData=await data.json()
-            setProduct(jsonData)
+            console.log(jsonData);
+            setProduct(jsonData.products)
         }catch(e){
           return(e.message)
         }
       }
       fetchData()
     },[])
+
     return (
       <>
     {/* use effect work on the react lifecycle */}
@@ -27,12 +29,12 @@ function UseEffect () {
     <div>UseEffect</div>
     <h2>{counter}</h2>
     <h2>{pointer}</h2>
-
+    <br></br>
     <button onClick={()=>setCounter(counter+10)}>Counter</button>
     <br></br>
     <button onClick={()=>setPointer(pointer+20)}>pointer</button>
     <br></br>
-   {/* {JSON.stringify(product)} */}
+
     <table border="1">
   <thead>
     <tr>
@@ -42,7 +44,6 @@ function UseEffect () {
       <th>Category</th>
     </tr>
   </thead>
-
   <tbody>
     {product.map((item) => (
       <tr key={item.id}>
@@ -54,8 +55,7 @@ function UseEffect () {
     ))}
   </tbody>
 </table>
-
-    </>
+</>
   )
 }
 
